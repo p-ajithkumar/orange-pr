@@ -14,11 +14,11 @@
 
 .hero {
     min-height: 100vh;
-    background-image: url('../images/main.png');
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
     position: relative;
+    transition: background-image 0.5s ease-in-out;
 }
 
 .header{
@@ -28,7 +28,6 @@
 .header-container {
     width: calc(100% - 116px);
     margin: auto;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,7 +43,6 @@ nav a {
     font-weight: 600;
     font-size: 16px;
     line-height: 100%;
-    letter-spacing: 0;
     text-transform: uppercase;
     color: #fff;
     text-decoration: none;
@@ -52,7 +50,6 @@ nav a {
 
 .header-right {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 38px;
@@ -81,7 +78,6 @@ nav a {
 }
 
 .hero-title {
-    font-family: 'Inter', sans-serif;
     font-size: 128px;
     line-height: 100%;
     color: #FFFFFF;
@@ -111,10 +107,9 @@ nav a {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.25;
-    letter-spacing: 0%;
     color: #FFFFFF;
     margin-left: 149px;
-    margin-top: 40px;  /* (dec top - bright text top) - hero title font size */
+    margin-top: 40px;
     max-width: 468px; 
 }
 
@@ -122,7 +117,13 @@ nav a {
     width: 100%; 
     height: 0;
     border-top: 1px solid #FFFFFF;
-    margin-top: 45px;  /* Math: 927 (Button Top) - 881 (Line Top) - 1 (Line Height) */
+    margin-top: 45px;
+}
+
+.heroBottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .btn-explore {
@@ -137,5 +138,280 @@ nav a {
     border-radius: 5px;
     margin-left: 149px;
     margin-top: 46px; 
-    margin-bottom: 58px; /* Math: 1043 (Canvas Height) - (927 Top + 58 Height) */
+    margin-bottom: 58px;
+}
+
+.slider {
+    width: 296px;
+    height: 69px;
+    border: 1px solid #FFFFFF;
+    border-radius: 100px;
+    margin-right: 75px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 15px; 
+    padding: 0 15px;
+}
+
+.slider button {
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.slider button:hover { opacity: 0.8; }
+
+.dot {
+    width: 22px;
+    height: 22px;
+    background-color: #FFFFFF;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: outline 0.3s ease;
+}
+
+.dot.active {
+    outline: 1px solid #FFFFFF; 
+    outline-offset: 6px; 
+}
+
+.hero-video-mask {
+    width: 425px; 
+    height: 333px; 
+
+    top: 508px;   
+    
+    position: absolute;
+    z-index: 5;
+    
+    background: #FFFFFF; 
+    border-radius: 10px; 
+    background: rgba(255, 255, 255, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 75px; 
+}
+
+.video-content-frame {
+    width: 385px;  
+    height: 293px; 
+    border-radius: 8px; 
+    overflow: hidden; 
+}
+
+.hero-video-mask-sm, .video-content-frame-sm {
+    display: none;
+}
+
+
+@media (max-width: 1600px) {
+    .hero-title {
+        font-size: 96px; 
+    }
+    
+    .hero-title .text-fresh {
+        margin-top: 100px; 
+        margin-left: 80px; 
+    }
+    
+    .hero-title .text-juicy {
+        margin-left: 80px;
+    }
+    
+    .hero-title .text-bright {
+        margin-left: 80px; 
+    }
+    
+    .hero-desc {
+        margin-left: 80px;
+        margin-top: 24px; 
+        max-width: 468px; 
+    }
+    
+   .hero-video-mask {
+    width: 385px; 
+    height: 293px; 
+
+    top: 300px;   
+    
+    position: absolute;
+    z-index: 5;
+    
+    background: #FFFFFF; 
+    border-radius: 10px; 
+    background: rgba(255, 255, 255, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 75px; 
+}
+
+.video-content-frame {
+    width: 345px;  
+    height: 253px; 
+    border-radius: 8px; 
+    overflow: hidden; 
+}
+
+    .hero-divider {
+        margin-top: 30px; 
+    }
+    
+    .btn-explore {
+        margin-left: 80px; 
+        margin-top: 24px;  
+        margin-bottom: 40px; 
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero {
+        min-height: 100vh;
+        background-image: url('../images/trendy-young-woman-screaming-loudspeaker\ 2.png'), url('../images/bg.png');
+        background-size: contain, cover; 
+        background-position: right bottom, center center;
+        background-repeat: no-repeat, no-repeat;
+        position: relative;
+    }
+
+    .header-container {
+        width: calc(100% - 60px); 
+    }
+    .hero-title {
+        font-size: 72px;
+    }
+    .hero-title .text-fresh {
+        margin-top: 80px;
+    }
+    .hero-title .text-fresh,
+    .hero-title .text-juicy,
+    .hero-title .text-bright,
+    .hero-desc,
+    .btn-explore {
+        margin-left: 40px; 
+    }
+    .hero-desc {
+        max-width: 80%; 
+    }
+     nav {
+        display: none;
+    }
+    .heroBottom{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .slider {
+        width: 246px;
+        height: 56px;
+        gap: 12px; 
+         margin-right: 0px;
+    }
+
+    .hero-video-mask {
+        display: none;
+    }
+
+   .hero-video-wrapper-sm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto;
+    width: 100%;
+    z-index: 5;
+  }
+
+  .hero-video-mask-sm,
+  .video-content-frame-sm {
+    display: block;
+  }
+
+  .hero-video-mask-sm {
+    display: flex;
+    width: 385px;
+    height: 293px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    border: 1px solid #FFFFFF;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .video-content-frame-sm {
+    width: 345px;
+    height: 253px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        background-size: 100% auto, cover;
+        background-position: center bottom, center center; 
+        background-image: url('../images/trendy-young-woman-screaming-loudspeaker\ 2.png'), url('../images/bg.png');
+        background-repeat: no-repeat, no-repeat;
+    }
+    nav {
+        display: none;
+    }
+    .header {
+        padding-top: 24px;
+    }
+    .hero-title {
+        font-size: 56px;
+    }
+    .hero-title .text-fresh,
+    .hero-title .text-juicy,
+    .hero-title .text-bright,
+    .hero-desc, 
+    .btn-explore {
+        margin-left: 20px;
+    }
+    .hero-title .text-fresh {
+        margin-top: 60px;
+    }
+    .hero-divider {
+        margin-top: 24px;
+    }
+    .btn-explore {
+        margin-top: 24px;
+        margin-bottom: 30px;
+        padding: 16px 40px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        background-size: 140% auto, cover;
+        background-position: 45% bottom;
+    }
+    .header-container h1 {
+        font-size: 32px !important; 
+    }
+    .menu-btn {
+        width: 48px;
+        height: 48px;
+    }
+    .hero-title {
+        font-size: 44px;
+    }
+    .hero-title .text-fresh {
+        margin-top: 40px;
+    }
+    .hero-desc {
+        font-size: 14px;
+        max-width: 90%;
+    }
+    .btn-explore {
+        width: calc(100% - 40px); 
+        text-align: center;
+    }
 }

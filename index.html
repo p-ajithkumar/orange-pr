@@ -1,15 +1,11 @@
 <!DOCTYPE html>
-
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
         <title>Orange PR</title>
-
         <link rel="stylesheet" href="./css/style.css"/>
     </head>
-
     <body>
         <section class="hero">
             <header class="header">
@@ -23,26 +19,50 @@
                             <a href="#">CONTACT</a>
                         </nav>
                         <button class="menu-btn">
-                            <img src="./images/dots.png" alt=""/>
+                            <img src="./images/dots.png" alt="Menu"/>
                         </button>
                     </div>
                 </div>
             </header>
+            <div class="hero-video-mask">
+                <div class="video-content-frame">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/z1zsgLY8OXs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+             </div>
             <div class="hero-layout">
-                <h2 class="hero-title">
+                <h2 id="slideTitle" class="hero-title">
                     <span class="text-fresh">FRESH</span>
                     <span class="text-juicy">JUICY</span>
                     <span class="text-bright">BRIGHT</span>
                 </h2>
-                <p class="hero-desc">
+                <p class="hero-desc" id="slideDescription">
                     Streamlining Media Relations for Brands. Orange PR manages media relations, 
                     freeing clients to focus on daily operations, while ensuring campaign 
                     initiatives are constantly monitored and updated for success.
                 </p>
                 <div class="hero-divider"></div>
-                <div><a href="#" class="btn-explore">EXPLORE</a></div>
+            </div>
+
+             <div class="hero-video-wrapper-sm">
+                 <div class="hero-video-mask-sm">
+                    <div class="video-content-frame-sm">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/z1zsgLY8OXs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                 </div>
+             </div>
+            
+            <div class="heroBottom">
+                <a href="#" class="btn-explore">EXPLORE</a>
+                <div class="slider">                        
+                    <button id="prevSlide"><img src="./assets/icons/arrow-left.svg" alt="Previous Slide"/></button>
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <button id="nextSlide"><img src="./assets/icons/arrow-right.svg" alt="Next Slide"/></button>
+                </div>
             </div>
         </section>
-        <script src="./js/script.js"> </script>
+        <script src="./js/script.js"></script>
     </body>
 </html>

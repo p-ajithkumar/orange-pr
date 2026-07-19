@@ -1841,6 +1841,7 @@ nav a {
         flex-direction: column;
         gap: 20px;
         align-items: flex-start;
+        padding: 41px 100px 41px;
     }
 }
 
@@ -2017,5 +2018,6 @@ nav a {
 
     .footer-bottom {
         text-align: left;
+         padding: 41px 70px 41px;
     }
 }

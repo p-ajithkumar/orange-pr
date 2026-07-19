@@ -1,3 +1,7 @@
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const heroSection = document.querySelector('.hero');
     const dots = document.querySelectorAll('.slider .dot');
@@ -5,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.getElementById('nextSlide');
     const slideTitle = document.getElementById('slideTitle');
     const slideDescription = document.getElementById('slideDescription');
+    const nav = document.getElementById('nav');
+    const menuBtn = document.getElementById('navBtn');
 
     const slides = [
         {
@@ -94,4 +100,89 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     updateSlider(0);
+
+    menuBtn.addEventListener('click', (event) => {
+        nav.classList.toggle('open');
+        menuBtn.classList.toggle('active');
+    });
+
+  const cards = [
+    {
+        title: "Media",
+        subtitle: "Relations",
+        description:
+            "Orange PR takes charge of all media relations on behalf of our clients, enabling them to concentrate on their brand's daily requirements.",
+        image: "./images/journalist-taking-interview-from-woman 1.png"
+    },
+    {
+        title: "Influencer",
+        subtitle: "Management",
+        description:
+            "We connect brands with influencers that fit their audience and campaign goals.",
+        image: "./images/young-woman-blogger-recording-video-camera 1.png"
+    },
+    {
+        title: "Events",
+        subtitle: "",
+        description:
+            "We organize memorable events that strengthen your brand presence.",
+        image: "./images/studio-camera-concert 1.png"
+    }
+];
+
+const servicesSlider = document.querySelector(".services-slider");
+
+function renderCards(activeIndex){
+
+    servicesSlider.innerHTML = "";
+
+    cards.forEach((card,index)=>{
+
+    servicesSlider.innerHTML += `
+<div class="service-card ${index === activeIndex ? "active" : ""}"
+     data-index="${index}">
+
+    <img src="${card.image}" alt="${card.title}">
+
+    <div class="overlay">
+
+        <div class="blur"></div>
+
+        <h3>${card.title}</h3>
+
+        <h4>${card.subtitle}</h4>
+
+        ${
+            index === activeIndex
+            ? `
+                <p>${card.description}</p>
+                <button class="arrow-btn">→</button>
+              `
+            : ""
+        }
+
+    </div>
+
+</div>
+`;
+
+    });
+}
+
+let activeCard = 0;
+
+servicesSlider.addEventListener("click",(e)=>{
+
+    const card=e.target.closest(".service-card");
+
+    if(!card) return;
+
+    activeCard=Number(card.dataset.index);
+
+    renderCards(activeCard);
+
+});
+
+renderCards(0);
+
 });

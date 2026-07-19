@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
                        initiatives are constantly monitored and updated for success.`
         },
         {
-            backgroundImage: "url('../images/bg5.png')",
+            backgroundImage: "url('../images/trendy-young-woman-screaming-loudspeaker\ 2.png'), url('../images/bg.png')",
             backgroundSize: "contain, cover",
             backgroundPosition: "right bottom, center center",
             titleHTML: `<span class="text-fresh">SUPER FAST</span>
@@ -170,21 +170,17 @@ function renderCards(activeIndex){
 }
 
 let activeCard = 0;
-const totalCards = cards.length; 
 
-servicesSlider.addEventListener("click", (e) => {
-    const card = e.target.closest(".service-card");
-    const arrowBtn = e.target.closest(".arrow-btn");
-    if (arrowBtn && card) {
-        e.stopPropagation(); // Stop trigger conflicts
-        activeCard = (activeCard + 1) % totalCards; 
-        renderCards(activeCard);
-        return;
-    }
-    // Otherwise, handle regular card clicking
-    if (!card) return;
-    activeCard = Number(card.dataset.index);
+servicesSlider.addEventListener("click",(e)=>{
+
+    const card=e.target.closest(".service-card");
+
+    if(!card) return;
+
+    activeCard=Number(card.dataset.index);
+
     renderCards(activeCard);
+
 });
 
 renderCards(0);
